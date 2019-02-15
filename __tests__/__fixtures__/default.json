@@ -1,0 +1,16 @@
+{ 
+  "as": "AS999999 MTS PJSC",
+  "city": "Belgorod",
+  "country": "Russia",
+  "countryCode": "RU",
+  "isp": "MTS Belgorod",
+  "lat": 0,
+  "lon": 0,
+  "org": "MTS PJSC",
+  "query": "127.0.0.1",
+  "region": "BEL",
+  "regionName": "Belgorod Oblast",
+  "status": "success",
+  "timezone": "Europe/Moscow",
+  "zip": "308000" 
+}

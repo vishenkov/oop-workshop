@@ -2,4 +2,6 @@
 
 import grabber from '..';
 
-(async () => console.log(await grabber(process.argv[3])))();
+(async () => {
+  console.log(await grabber(process.argv[2]));
+})();

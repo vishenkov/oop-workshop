@@ -1,7 +1,7 @@
 install: install-deps
 
 run:
-	npx babel-node -- 'src/bin/get-geo.js' 10
+	npx babel-node -- 'src/bin/get-geo.js'
 
 install-deps:
 	yarn

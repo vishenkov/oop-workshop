@@ -1,4 +1,3 @@
-import 'source-map-support/register';
 import axios from 'axios';
 import getGrabber from './grabber';
 import render from './render';
