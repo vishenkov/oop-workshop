@@ -19,17 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hexlet-boilerplates/nodejs-package.git"
+    "url": "git+https://github.com/vishenkov/oop-workshop.git"
   },
   "author": "Kirill Vishenkov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hexlet-boilerplates/nodejs-package/issues"
+    "url": "https://github.com/vishenkov/oop-workshop/issues"
   },
   "jest": {
     "testEnvironment": "node"
   },
-  "homepage": "https://github.com/hexlet-boilerplates/nodejs-package#readme",
+  "homepage": "https://github.com/vishenkov/oop-workshop#readme",
   "dependencies": {
     "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
     "axios": "^0.18.0",
