@@ -1,10 +1,10 @@
 {
-  "name": "nodejs-package",
-  "version": "0.0.3",
+  "name": "get-geo",
+  "version": "0.0.1",
   "description": "",
   "main": "dist/index.js",
   "bin": {
-    "hexlet": "dist/bin/hexlet.js"
+    "get-geo": "dist/bin/get-geo.js"
   },
   "engines": {
     "node": ">=8"
@@ -21,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/hexlet-boilerplates/nodejs-package.git"
   },
-  "author": "Kirill Mokevnin",
+  "author": "Kirill Vishenkov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/hexlet-boilerplates/nodejs-package/issues"
