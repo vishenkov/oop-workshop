@@ -1,4 +1,33 @@
 # get-geo cli utility
 
+## Usage
+> Run from console
+```
+get-geo 127.0.0.1
+```
 
-Based on hexlet [nodejs-package](https://github.com/hexlet-boilerplates/nodejs-package)
+> Run locally
+```
+make run
+```
+
+> Build
+```
+make build
+```
+
+> Setup
+```
+yarn
+```
+OR
+```
+make install
+```
+
+> Tests
+```
+make test
+```
+
+Based on [hexlet](https://hexlet.io) boilerplate [nodejs-package](https://github.com/hexlet-boilerplates/nodejs-package)
