@@ -1,11 +1,16 @@
 import fs from 'fs';
 import _ from 'lodash';
 
-const files = fs.readdirSync('./');
-const filteredFiles = _.reject(files, file => console.log(file) || _.startsWith(file, '.'));
-const sortedFiles = _.sortBy(filteredFiles);
-const middleFile = sortedFiles[Math.round(_.size(sortedFiles) / 2)];
-const pluralFile = _.endsWith(middleFile, 's') ? middleFile : `${middleFile}s`;
-const upperFile = _.toUpper(pluralFile);
+const result = _.reduce(
+  [
+    files => _.reject(files, file => _.startsWith(file, '.')),
+    files => _.sortBy(files),
+    files => files[Math.round(_.size(files) / 2)],
+    file => (_.endsWith(file, 's') ? file : `${file}s`),
+    file => _.toUpper(file),
+  ],
+  (acc, fn) => fn(acc),
+  fs.readdirSync('./'),
+);
 
-console.log(upperFile);
+console.log(result);
