@@ -1,8 +1,20 @@
 import getGrabber from './grabber';
 import render from './render';
 
-export default async (ip = '', { baseUrl = 'http://ip-api.com/json', lib } = {}) => {
-  const grab = getGrabber(baseUrl, lib);
-  const response = await grab(ip);
-  return render(response);
-};
+
+export default class Geo {
+  constructor({ lib, baseUrl = 'http://ip-api.com/json', renderer = render } = {}) {
+    this.lib = lib;
+    this.baseUrl = baseUrl;
+    this.renderer = renderer;
+  }
+
+  grab(ip = '') {
+    return getGrabber(this.baseUrl, this.lib)(ip);
+  }
+
+  async render(ip) {
+    const response = await this.grab(ip);
+    return this.renderer(response);
+  }
+}

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import grabber from '..';
+import Geo from '..';
 
 (async () => {
-  console.log(await grabber(process.argv[2]));
+  console.log(await (new Geo()).render(process.argv[2]));
 })();
