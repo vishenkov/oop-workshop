@@ -13,7 +13,7 @@ export default class Geo {
     return getGrabber(this.baseUrl, this.lib)(ip);
   }
 
-  async render(ip) {
+  async getInfoByIp(ip) {
     const response = await this.grab(ip);
     return this.renderer(response);
   }
