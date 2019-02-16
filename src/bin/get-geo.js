@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import Geo from '..';
+import cli from '../cli';
 
 (async () => {
-  console.log(await (new Geo()).getInfoByIp(process.argv[2]));
+  const result = await cli(process.argv[2]);
+  console.log(result);
 })();

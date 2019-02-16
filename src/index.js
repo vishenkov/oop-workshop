@@ -1,20 +1,18 @@
-import getGrabber from './grabber';
-import render from './render';
-
+import axios from 'axios';
 
 export default class Geo {
-  constructor({ lib, baseUrl = 'http://ip-api.com/json', renderer = render } = {}) {
+  constructor({ lib = axios, baseUrl = 'http://ip-api.com/json' } = {}) {
     this.lib = lib;
     this.baseUrl = baseUrl;
-    this.renderer = renderer;
   }
 
   grab(ip = '') {
-    return getGrabber(this.baseUrl, this.lib)(ip);
+    const url = new URL(`${this.baseUrl}/${ip}`);
+    return this.lib.get(url.toString());
   }
 
   async getInfoByIp(ip) {
-    const response = await this.grab(ip);
-    return this.renderer(response);
+    const { data } = await this.grab(ip);
+    return data;
   }
 }
