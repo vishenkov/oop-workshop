@@ -1,15 +1,11 @@
 import _ from 'lodash/fp';
 
-import getGrabber from '../src/grabber';
-import defaultResponse from './__fixtures__/default.json';
-import ipResponse from './__fixtures__/ip-response.json';
-import badResponse from './__fixtures__/bad.json';
+import grab from '../src';
 
-const baseUrl = 'some.url';
 const responses = {
-  [`${baseUrl}/`]: defaultResponse,
-  [`${baseUrl}/127.0.0.1`]: ipResponse,
-  [`${baseUrl}/bad`]: badResponse,
+  '': 'It is Russia, city Belgorod, timezone: "Europe/Moscow"',
+  '124.21.33.13': 'It is China, city Beijing, timezone: "Asia/Shanghai"',
+  bad: 'Request failed!',
 };
 
 const mock = {
@@ -18,17 +14,17 @@ const mock = {
 
 describe('grabber lib test', () => {
   test('Should return current location for empty argument', async () => {
-    const grab = getGrabber(baseUrl, mock);
-    expect(await grab()).toEqual(defaultResponse);
+    const response = await grab('', mock);
+    expect(response).toEqual(responses['']);
   });
 
   test('Should return correct location for ip argument', async () => {
-    const grab = getGrabber(baseUrl, mock);
-    expect(await grab('127.0.0.1')).toEqual(ipResponse);
+    const response = await grab('124.21.33.13', mock);
+    expect(response).toEqual(responses['124.21.33.13']);
   });
 
   test('Should return error response for bad argument', async () => {
-    const grab = getGrabber(baseUrl, mock);
-    expect(await grab('bad')).toEqual(badResponse);
+    const response = await grab('bad', mock);
+    expect(response).toEqual(responses.bad);
   });
 });
